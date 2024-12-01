@@ -22,8 +22,6 @@ public class DemoTest {
         // ChromeDriver yolunu ayarlayın
         System.setProperty("webdriver.chrome.driver", "src/main/java/com/rd/drivers/chromedriver");
 
-       x
-
         // Page Load Timeout
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(120));
 
