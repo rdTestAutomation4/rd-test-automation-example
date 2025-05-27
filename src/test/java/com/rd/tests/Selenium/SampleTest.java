@@ -5,17 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class SampleTest {
     WebDriver driver;
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.gecko.driver", "src/main/java/com/rd/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/java/com/rd/drivers/chromedriver");
 
         ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless");
@@ -30,6 +34,11 @@ public class SampleTest {
 
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
+
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(120));
+
+        // Implicit Wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     @Test
