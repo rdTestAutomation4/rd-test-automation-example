@@ -42,20 +42,20 @@ public class DemoTest {
 
     @Test
     public void FormSubmit() {
-        WebElement txtUsername = driver.findElement(By.cssSelector("input[id='userName'][type='text']"));
-        txtUsername.sendKeys("serkancura");
+        WebElement txtUsername = driver.findElement(By.cssSelector("input#userEmail.form-control[type=\"email\"]"));
+        txtUsername.sendKeys("serkancurard@gmail.com");
 
-    /*    List<WebElement> liList = driver.findElements(By.cssSelector("li[id^='item']"));
+       List<WebElement> liList = driver.findElements(By.cssSelector("ul.menu-list li"));
 
         for (WebElement element : liList ){
             System.out.println(element.getText());
         }
-*/
-        List<WebElement> divList = driver.findElements(By.cssSelector("div[class$='group']"));
+
+      /*  List<WebElement> divList = driver.findElements(By.cssSelector("div[class$='group']"));
 
         for (WebElement element : divList ){
             System.out.println(element.getText());
-        }
+        }*/
 
 
     }

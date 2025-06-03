@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -44,6 +45,10 @@ public class DemoTest {
             System.out.println(dynamicElement.getText());
             System.out.println(dynamicCSSElement.getText());
         }
+    }
 
+    @AfterTest
+    public void tearDown(){
+        driver.quit();
     }
 }
